@@ -8,8 +8,14 @@
 
 <script>
     (function () {
-        var firstDate = new Date (2017,0,0);
-        console.log(firstDate.getDay());
+        for (var i = 2000; i < 2051; i++)
+        {
+            var year = new Date(i, 0, 0);
+            var sunday = year.getDay();
+            if (sunday === 6) {
+                console.log(i);
+            }
+        }
     }());
 </script>
 </body>
