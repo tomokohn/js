@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js 13</title>
+    <script>
+        var myArr = [2,2,2,2,2];
+        var sum=0;
+        for (i=0; i<myArr.length;i++) {
+            sum=sum + myArr[i];
+        }
+        console.log(sum);
+/*                                    */
+        function total(array){
+            var sum=0;
+            for (i=0; i<array.length; i++){
+                sum=sum + array[i];
+            }
+            return(sum);
+        }
+        console.log(total(myArr));
+        /*   ******************   */
+
+        function total1(array) {
+            if (array.length < 5) {
+                for (var i = array1.length; i < 5; i++) {
+                    array[i] = i+1;
+                }
+            }
+            console.log(array);
+            for (var i=0; i<5; i++) {
+                totalsum += array[i] ? array[i] : i+1;
+            }
+        }
+total1([])
+    </script>
+</head>
+<body>
+
+</body>
+</html>

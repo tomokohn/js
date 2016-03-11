@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .color1 {
+            color: red;
+        }
+        ​
+        .color2 {
+            color: yellow;
+        }
+    </style>
+    ​
+</head>
+<body>
+<main></main>
+<script>
+    var i,
+            container = document.querySelector('main');
+
+    for (i = 0; i < 3; i++) {
+
+        var button = document.createElement('button');
+        button.textContent = '--- ' + i + ' ---';
+        button.setAttribute("data-values", i )
+        container.appendChild(button);
+    }
+
+    var buttons = document.querySelectorAll('button');
+
+    for (i = 0; i < buttons.length; i++) {
+
+        buttons[i].addEventListener('click',
+                function() {
+
+                    console.log('Clicked on: ' + this.dataset["values"]);
+                });
+    }
+
+</script>
+</body>
+</html>
