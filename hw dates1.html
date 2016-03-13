@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getDayAndTime</title>
+</head>
+<body>
+
+</body>
+<script>
+    (function () {
+        var daylist = ['Sunday', 'Monday', 'Tuesday',
+            'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        var today = new Date();
+        console.log(today);
+        switch (today.getDay()){
+            case 0 :
+                console.log("today is: " + daylist[0]);
+                break;
+            case 1 :
+                console.log("today is: " + daylist[1]);
+                break;
+            case 2 :
+                console.log("today is: " + daylist[2]);
+                break;
+            case 3 :
+                console.log("today is: " + daylist[3]);
+                break;
+            case 4 :
+                console.log("today is: " + daylist[4]);
+                break;
+            case 5 :
+                console.log("today is: " + daylist[5]);
+                break;
+            case 6 :
+                console.log("today is: " + daylist[6]);
+                break;
+        }
+        var s = today.getSeconds();
+        if (s<10){
+            s = "0" + s;
+        };
+        var m = today.getMinutes();
+        if (m<10){
+            m = "0" + m;
+        };
+        var h = today.getHours();
+        if (s<10){
+            h = "0" + h;
+        };
+        console.log("Current time is: " + h + ":" + m + ":" + s)
+        // Your code here
+
+    }());
+</script>
+</html>

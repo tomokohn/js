@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getFormattedDate</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*
+     Ex. getFormattedDate:
+
+     1. Write a function that will display the current date
+     in the format:
+     dd/mm/yyyy
+     2. Should accept an optional delimiter
+     3. Handle missing leading 0
+     */
+
+    (function () {
+        var getFormattedDate,
+                today = new Date(),
+                day = today.getDate(),
+                month = today.getMonth() + 1,
+                year = today.getFullYear(),
+                heandle0;
+
+        heandle0 = function (val){
+            return val < 10 ? "0" + val : val;
+        }
+        day = heandle0(day);
+        month = heandle0(month);
+        getFormattedDate = function(dash){
+            if (dash === undefined) {
+                return day + "/"+ month + "/" + year;
+            } else {
+                return day + dash + month + dash + year;
+            };
+        };
+        // Your code here
+
+
+
+        // Tests
+        console.log(getFormattedDate());
+        // dd/mm/yyyy
+        console.log(getFormattedDate('-'));
+        // dd-mm-yyyy
+    }());
+</script>
+</html>

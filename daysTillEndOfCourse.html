@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>daysTillEndOfCourse</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*
+     Ex. daysTillEndOfCourse:
+
+     Calculate how many days are there left till the end of the course
+     */
+
+    (function () {
+        var today = new Date(),
+                lastday = new Date (2016,6,1);
+        console.log("today is :"+today)
+        console.log("course ends at :" + lastday);
+        var countDay = 0;
+        var day = new Date();
+
+
+        while ( day < lastday){
+            day.setDate(day.getDate()+countDay);
+            countDay ++;
+
+        };
+        console.log(countDay + " days till course ends ");
+
+        // Your code here
+
+    }());
+
+</script>
+</html>
