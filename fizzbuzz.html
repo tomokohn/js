@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+   /* for (var i=1; i<=100; i++){
+        if (i%15 === 0) {
+            console.log("FizzBuzz");
+        }
+            else if (i%5 === 0){
+                console.log("Buzz");
+            } else if (i%3 === 0){
+                console.log("Fizz");
+            } else {
+                console.log(i);
+            }
+
+    }*/
+/*
+    var arr1 = [1,2,1,1];
+    function some(arr,num) {
+        for (var i=0; i<arr.length; i++) {
+            if (arr[i]=== num) {
+                return true;
+            }
+        }
+        return false;
+    }
+    console.log(some(arr1,1));
+
+   function everyone(arr,num) {
+       var answer=0;
+       for (var i=0; i<arr.length;i++) {
+           if (arr[i]=== num) {
+               answer++;
+           }
+           if (answer === arr.length){
+           return true;
+           }
+       }
+       return false;
+       }
+   console.log ("everyone is :" + everyone(arr1,1));*/
+
+    function range(num1,num2,num3) {
+        var arr = [num1];
+        var cNum = num1;
+        var jump = num3 || 0;
+        jump = Math.abs(jump);
+        if (num1<num2) {
+            while ((arr[arr.length-1]+jump) <= num2){
+                cNum+=jump;
+                arr.push(cNum);
+//                console.log(arr);
+
+            }
+
+
+        }
+        if (num1>num2) {
+            while (arr[arr.length-1]-jump >= num2){
+                cNum-=jump;
+                arr.push(cNum);
+
+//                console.log(arr);
+
+            }
+
+
+        }
+        return arr;
+    }
+//    console.log(range(1,10,2));
+   console.log(range(5, 2, -1));
+
+    function sum(myArr){
+    var total = myArr.reduce(function(a, b) {
+    return a + b;
+    });
+    }
+    console.log (sum(range(1,4)));
+
+
+
+</script>
+</body>
+</html>
