@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>רקורסיה</title>
+</head>
+<body>
+
+<script>
+   var counter = 0;
+    function  printCounter() {
+
+        if (counter === 5) {
+            return counter;
+        }
+        ++counter;
+        printCounter();
+        console.log(counter);
+    }
+    printCounter();
+
+</script>
+
+</body>
+</html>

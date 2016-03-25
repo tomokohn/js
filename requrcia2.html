@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>רקורסיה</title>
+</head>
+<body>
+
+<script>
+//    var sum = 0;
+//    function  printCounter(counter) {
+//        var number  = counter || 0;
+//        if (number === 101) {
+//            return number;
+//        }
+//        sum += number;
+//        ++number;
+//        printCounter(number);
+//        console.log(number);
+//    }
+//    printCounter();
+//    console.log (sum);
+
+
+    function  printCounter(counter,sum) {
+        var sum1  = sum || 0;
+        var number  = counter || 0;
+        if (number === 100) {
+            return number;
+        }
+        sum1 += number+1;
+        ++number;
+        if (number === 100 ) {
+         console.log (sum1);
+         }
+        printCounter(number,sum1);
+
+        
+    }
+    printCounter();
+//-----------------------------------------
+function sumsum(total,number) {
+    if (number === 100){
+        return number;
+    }
+    return sumsum(total, (number+1)) + number ;
+}
+    console.log(sumsum(0,1));
+
+
+</script>
+
+</body>
+</html>

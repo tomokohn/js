@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+     Ex. shuffle:
+
+     Write a function to shuffle the values of an array,
+     returning a new array
+     */
+
+    (function () {
+        var numbersArr = [1, 2, 3, 4, 5, 6, 7, 8, 9],
+                shuffle;
+
+        shuffle = function (arr) {
+            // Your code here
+            var newArr = [];
+            for (var i = 0; i < arr.length; i++) {
+
+                var rand1 = Math.floor(Math.random() * arr.length);
+                if(newArr[rand1] !== undefined){
+                    i--;
+                }else {
+
+                    newArr[rand1] = numbersArr[i];
+                }
+            }
+
+
+            return newArr
+        };
+
+
+        // Tests
+        console.log(shuffle(numbersArr));
+        // e.g. (should be random)
+        // [6, 1, 9, 8, 7, 4, 5, 0, 3, 2]
+    }());
+
+</script>
+</body>
+</html>
