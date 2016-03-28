@@ -13,10 +13,22 @@
 </div>
 
 <script>
+    function talksAbout(node, string) {
+        if (node.nodeType === document.TEXT_NODE){
+            var temp = node.nodeValue;
+            if (temp.indexOf(string) >= 0 ){
+            return true;
+            }
+            else return false;
+        }
+        if (node.nodeType === document.ELEMENT_NODE){
+            for (var i = 0; i < node.childNodes.length; i++) {
+                talksAbout(node.childNodes[i], string);
+        }
+        }
+    }
 
-
-
-    console.log(talksAbout(document.body, "book"));
+    console.log(talksAbout(document.querySelector('#text'), "book"));
     // → true
 </script>
 </body>
