@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var daisy = {
+
+        name: 'Daisy',
+
+        age: 2,
+
+        breed: 'Pekingese',
+
+        fetch: function () {
+
+            console.log(this); // daisy
+
+            function subFetch() {
+
+                console.log(this); // window
+
+                return this.name + ', go get it!';
+
+            }
+
+            return subFetch()
+
+        }
+
+    };
+
+    console.log(daisy.fetch()); // , go get it!
+</script>
+</body>
+</html>

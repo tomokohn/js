@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nodule</title>
+</head>
+<body>
+<script>
+    /*
+     Module Pattern Exercise:
+
+     1. Build a Module Pattern named `triangle` that returns a public method `getPerimeter`, public property `getSum` and has a private function `sum`.
+     2. `getSum` value is a reference to `sum`.
+     3. `getPerimeter` accepts any number of arguments and uses the private function `sum` to return the sum of only the first 3 arguments.
+
+     Restrictions:
+     1. `getPerimeter` and `sum` should not define any parameters in their declaration
+     2. `sum` should accept any number of arguments and return their sum.
+
+     */
+
+    //-----------------------------------------
+    // Your code here
+    //-----------------------------------------
+    function triangle() {
+         function sum(){
+             return arguments[0]+ arguments[1]+arguments[2];
+        return {
+            getPerimeter: function(){
+                var args = Array.prototype.slice.call(arguments);
+                args.reduce(function(a,b){
+                    return a+b;
+                })
+
+            }
+            getSum: sum
+            }
+        }
+    }
+
+
+    //-----------------------------------------
+    // Your code should pass these tests
+    //-----------------------------------------
+    console.log(typeof window.sum);
+    // 'undefined'
+    console.log(typeof triangle.sum);
+    // 'undefined'
+    console.log(triangle.getSum(2, 4, 8, 16, 32));
+    // 62
+    console.log(triangle.getPerimeter(2, 4, 8, 16, 32));
+    // 14
+    console.log(triangle.getPerimeter(1, 2, 3));
+    // 6
+
+</script>
+</body>
+</html>
