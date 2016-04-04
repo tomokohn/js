@@ -13,8 +13,70 @@
     <div data-tabname="three">Tab three</div>
 </div>
 <script>
-    function asTabs(node) {
-        var tabs = [];
+
+        function asTabs(node) {
+
+            var tabs = node.querySelectorAll("div");
+//            hide tabs
+            for (var j=0;j<tabs.length;j++){
+                tabs[j].setAttribute("style","display: none;");
+            }
+            console.log(tabs);
+//            create buttons
+            for (var i = tabs.length-1 ; i>-1; i--){
+                var button = document.createElement("button"),
+                t= document.createTextNode(tabs[i].textContent);
+                button.setAttribute("id",i+1);
+                button.appendChild(t);
+                node.insertBefore(button,node.childNodes[0]);
+                console.log(button);
+            }
+//            click listener
+            var btns = node.querySelectorAll("button");
+            console.log(btns);
+            for (var n = 0; n<btns.length; n++) {
+                var q = n;
+                btns[n].addEventListener("click",function(){
+//                    reset button color and tab visibility
+                    for (var k=0;k<3;k++){
+                        btns[k].style.color = "black";
+                        tabs[k].style.display = "none";
+                    }
+                    this.style.color = "red";
+                    console.log(tabs[q]);
+                    tabs[q].setAttribute("style","display:block;");
+                })
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*var tabs = [];
         for (var i = 0; i < node.childNodes.length; i++) {
             var child = node.childNodes[i];
             if (child.nodeType == document.ELEMENT_NODE)
@@ -44,7 +106,7 @@
                     tabList.childNodes[i].style.background = "";
             }
         }
-        selectTab(2);
+        selectTab(2);*/
     }
     asTabs(document.querySelector("#wrapper"));
 </script>
