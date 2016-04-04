@@ -26,7 +26,7 @@
             for (var i = tabs.length-1 ; i>-1; i--){
                 var button = document.createElement("button"),
                 t= document.createTextNode(tabs[i].textContent);
-                button.setAttribute("id",i+1);
+                button.setAttribute("id",i);
                 button.appendChild(t);
                 node.insertBefore(button,node.childNodes[0]);
                 console.log(button);
@@ -43,8 +43,8 @@
                         tabs[k].style.display = "none";
                     }
                     this.style.color = "red";
-                    console.log(tabs[q]);
-                    tabs[q].setAttribute("style","display:block;");
+                    console.log(this.getAttribute("id"));
+                    tabs[this.getAttribute("id")].setAttribute("style","display:block;");
                 })
             }
 
