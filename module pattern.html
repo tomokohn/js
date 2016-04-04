@@ -22,30 +22,42 @@
     //-----------------------------------------
     // Your code here
     //-----------------------------------------
-    function triangle() {
-         function sum(){
-             return arguments[0]+ arguments[1]+arguments[2];
-        return {
-            getPerimeter: function(){
-                var args = Array.prototype.slice.call(arguments);
-                args.reduce(function(a,b){
-                    return a+b;
-                })
+    var triangle = (function() {
 
-            }
-            getSum: sum
+        function sum() {
+            console.log(arguments);
+            var arr = Array.prototype.slice.call(arguments);
+            return arr.reduce(function (a, b) {
+                return a + b;
+
+            });
+        }
+
+        return {
+            getPerimeter: function () {
+                var args = Array.prototype.slice.call(arguments);
+                console.log(args);
+                return sum(args[0],args[1],args[2]);
+            },
+
+            getSum: function () {
+                var args = Array.prototype.slice.call(arguments);
+                return sum.apply(this, args);
             }
         }
-    }
+
+    })();
+
+
 
 
     //-----------------------------------------
     // Your code should pass these tests
     //-----------------------------------------
     console.log(typeof window.sum);
-    // 'undefined'
+//     'undefined'
     console.log(typeof triangle.sum);
-    // 'undefined'
+     'undefined'
     console.log(triangle.getSum(2, 4, 8, 16, 32));
     // 62
     console.log(triangle.getPerimeter(2, 4, 8, 16, 32));

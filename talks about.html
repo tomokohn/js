@@ -17,22 +17,23 @@
         if (node.nodeType === document.TEXT_NODE){
             var temp = node.nodeValue;
             if (temp.indexOf(string) > -1 ){
-            found = true;
-                return;
+            return true;
             } else {
-                found= false;
-                return;
+                return false;
             }
         }
         if (node.nodeType === document.ELEMENT_NODE){
             for (var i = 0; i < node.childNodes.length; i++) {
-                talksAbout(node.childNodes[i],string,found);
+                if (talksAbout(node.childNodes[i],string,found)){
+                    return true;
+                }
+
         }
+            return false;
         }
-        return found;
     }
 
-    console.log(talksAbout(document.body, "book"));
+    console.log(talksAbout(document.getElementById('text'), "book"));
     // → true
 </script>
 </body>

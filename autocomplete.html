@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>autocomplete</title>
+</head>
+<body>
+    <input type="text" id="field">
+    <div id="suggestions" style="cursor: pointer"></div>
+
+<script>
+    // Builds up an array with global variable names, like
+    // 'alert', 'document', and 'scrollTo'
+    var terms = [];
+    for (var name in window) {
+        terms.push(name);
+    }
+
+    // Your code here.
+    var ul = document.createElement("ul");
+    document.querySelector('#suggestions').appendChild(ul)
+
+
+    var field = document.querySelector('#field');
+    field.addEventListener('keyup',function (){
+        while (ul.firstChild) {
+            ul.removeChild(ul.firstChild);
+        }
+        for (var i = 0; i < terms.length ; i++){
+            if (terms[i].indexOf(field.value)=== 0){
+                var li = document.createElement('li');
+                li.textContent = terms[i];
+                li.addEventListener('click', function(){
+                    field.value = this.textContent;
+                    console.log(field.value);
+                });
+                ul.appendChild(li);
+            }
+        }
+    })
+</script>
+</body>
+</html>
