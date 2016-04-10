@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>is even</title>
+</head>
+<body>
+<script>
+    /*Behavior:
+    - Zero is even.
+    - One is odd.
+    - For any other number N, it's evenness is the same as N - 2.
+
+    Reference (in case you're stuck):
+    http://eloquentjavascript.net/03_functions.html#p_iDq2OgBOGw
+            */
+
+    (function () {
+
+        // Your code here.
+        function isEven(num){
+            num = Math.abs(num);
+            if (num === 0) {return true}
+                else
+            if (num === 1) {return false}
+            else  return isEven(num-2);
+
+        }
+
+        /**
+         * Expected results
+         */
+
+        console.log(isEven(6));
+        // → true
+        console.log(isEven(75));
+        // → false
+        console.log(isEven(-1));
+        // → false
+    }());
+</script>
+</body>
+</html>
