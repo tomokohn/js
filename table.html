@@ -32,6 +32,8 @@
             if (xhr.readyState === 4) {
                 if (xhr.status === 200 || xhr.status === 304) {
                     answer = JSON.parse(xhr.responseText);
+//                    we must call buildTable here becuse the AJAX call is a asynchronous function
+                    buildTable(answer);
                 } else {
                     console.log("error");
                 }
@@ -39,8 +41,8 @@
         }
         xhr.send(null);
 //        answer = JSON.parse(xhr.responseText);
-        console.log(answer);
-        return answer;
+
+
     }
 
     function buildTable(data) {

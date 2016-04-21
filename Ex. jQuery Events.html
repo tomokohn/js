@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex. jQuery Events</title>
+</head>
+<body>
+<h1>Lorem Ipsum</h1>
+
+<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac <strong>turpis egestas</strong>.<br>
+    Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. <strong>Donec eu libero</strong> sit amet quam egestas semper.<br>
+    Aenean <strong>ultricies?</strong> mi vitae est. <em>Mauris placerat eleifend leo</em>.</p>
+
+<h2>Lists</h2>
+<ul>
+    <li>Some list
+        <ul>
+            <li><a href="#">An item</a></li>
+            <li><a href="#">Another item</a></li>
+            <li><a href="#">Some other item</a></li>
+        </ul>
+    </li>
+    <li>Another list
+        <ul class="anotherList">
+            <li><a href="#">Yet another</a></li>
+            <li><a href="#">Fancy item</a></li>
+            <ul>
+                <li><a href="#">Sub item</a></li>
+                <li><a href="#">And one more</a></li>
+            </ul>
+        </ul>
+    </li>
+</ul>
+
+<h2>Table</h2>
+<table border="1">
+    <thead>
+    <tr>
+        <th id="location">Location</th>
+        <th id="topic">Topic</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>New York</td>
+        <td>JavaScript &amp; jQuery</td>
+    </tr>
+    <tr>
+        <td>San Francisco</td>
+        <td>HTML &amp; CSS</td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>Form</h2>
+<form action="#" method="get">
+    <label>Name: <input name="name" type="text"></label>
+    <br>
+    <label>Email: <input name="email" type="email"></label>
+    <br>
+
+    <label>Location:
+        <select name="location">
+            <option value="sf">San Francisco</option>
+            <option value="nyc">New York</option>
+        </select></label>
+    <br>
+
+    <fieldset>
+        <legend>Gender:</legend>
+        <input type="radio" name="gender" id="female" value="female">
+        <label for="female">Female</label>
+        <input type="radio" name="gender" id="male" value="male">
+        <label for="male">Male</label>
+    </fieldset>
+    <br>
+
+    <label>Experience:<br>
+        <textarea name="experience"></textarea>
+    </label>
+    <br>
+
+    <button type="submit">Sign Up</button>
+</form>
+
+<p>
+    <a href="http://twitter.com/girldevelopit">Twitter</a>
+    <span>|</span>
+    <a href="http://www.facebook.com/girldevelopit">Facebook</a> <span>|</span>
+    <a href="http://www.flickr.com/photos/40453677@N00/sets/72157626841092971/">Flickr</a>
+</p>
+
+<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+<script>
+    /**
+     Ex. jQuery Basics
+
+     Restrictions:
+     - Do not touch the HTML
+     - Use only jQuery (loaded in this Pen)
+
+     Requirements:
+     1. Add an event listener to the 'Sign Up' button that will change the <h1> to the specified `name` in the Form.
+     1.1. if the 'Male' radio button is checked, add before the name 'Mr.', if the 'Female' radio button is checked, add 'Ms.', if none is checked, add 'Alian.'
+     */
+
+    (function ($) {
+
+        // Your code here
+$
+    }(jQuery))
+</script>
+
+</body>
+</html>
