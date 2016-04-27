@@ -22,7 +22,7 @@
 //        {name: "Popocatepetl", height: 5465, country: "Mexico"}
 //    ];
 
-    function fetch(callback) {
+    function fetch() {
         var xhr = new XMLHttpRequest(),
                 answer;
         xhr.open('GET', 'mountains.json');
@@ -31,14 +31,15 @@
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4) {
                 if (xhr.status === 200 || xhr.status === 304) {
-                    callback(JSON.parse(xhr.responseText));
+                    answer = JSON.parse(xhr.responseText);
                 } else {
                     console.log("error");
                 }
             }
-
         }
         xhr.send(null);
+//        answer = JSON.parse(xhr.responseText);
+        console.log(answer);
         return answer;
     }
 
@@ -74,7 +75,7 @@
         }
     }
 
-console.log(fetch(buildTable));
+fetch();
 
 
 
