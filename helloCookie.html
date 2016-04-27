@@ -1,0 +1,218 @@
+<!DOCTY PE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html {
+             -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            background: #2F2F2F;
+            color: #eee;
+            font-family: sans-serif;
+            margin: 0;
+            z-index: 1;
+        }
+
+        .btn {
+            background: #5cb85c;
+            border-radius: 5px;
+            border: 1px solid #4cae4c;
+            box-shadow: 0px 0px 10px #000;
+            color: #eee;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 1.2em;
+            font-weight: bold;
+            line-height: 40px;
+            margin-bottom: 20px;
+            padding: 0 20px;
+            text-align: center;
+            text-shadow: 0px 0px 3px #333;
+        }
+
+        .btn:hover {
+            background-color: #47a447;
+            border-color: #398439;
+            box-shadow: 0px 0px 20px #111;
+            color: #eee;
+        }
+
+        .textCenter {
+            text-align: center;
+        }
+
+        .transition {
+             -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* =================================================
+           Temp CSS
+           ================================================= */
+
+        main {
+            margin-top: 120px;
+        }
+
+        input {
+            outline: 0;
+            font-size: 1.8em;
+            border-radius: 30px;
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<main class="textCenter">
+    <form id="formRemove" class="hidden" action="">
+        <h1>Hi there, <span></span>!</h1>
+        <br><br>
+        <button id="remove" class="btn">Remove Cookie</button>
+    </form>
+    <form id="formSave" class="hidden" action="">
+        <input type="text" placeholder="My name is..." autofocus required>
+        <br><br><br>
+        <button id="save" class="btn">Save</button>
+    </form>
+</main>
+
+<script type="text/javascript" src="http://codepen.io/netcraft/pen/RNwPaa.js"></script>
+<script>
+    /*
+     Ex. helloCookie
+
+     Make the form save the name of the user in a cookie.
+     When loaded, the page checks if the cookie exists.
+     If it does, it displays "Hi there, NAME"
+
+     Requirements:
+     - The cookie name should be `userName`
+     - Clicking `Save` should add a cookie with the input value in it
+     - Clicking `Remove Cookie` should remove the cookie
+
+     Hints:
+     - `expires` option accepts a date in UTC format, use `toUTCString()`
+     - The input element is already captured in `nameInput` variable
+
+     Restrictions:
+     - Do not change the HTML, CSS and JS after the relevant comment
+     */
+
+    /* globals UTILS */
+    (function () {
+        var formSave = UTILS.qs('#formSave'),
+                formRemove = UTILS.qs('#formRemove'),
+                nameWrap = UTILS.qs('h1 span'),
+                nameInput = UTILS.qs('#formSave input'),
+                toggleForms,
+                getCookie,
+                setCookie,
+                removeCookie;
+
+        //-------------------------------------------------
+        // Make these functions work
+        //-------------------------------------------------
+
+        // Get the value of a specific cookie
+        getCookie = function (name) {
+            var cookies = document.cookie,
+                cookie = [];
+            cookies = cookies.split(';');
+            console.log(cookies);
+            for (var i in cookies) {
+                cookie = cookies[i].split('=');
+                console.log(cookie);
+                var loc = cookie.indexOf("userName");
+                console.log(loc);
+                return cookie[loc+1];
+
+            }
+
+
+        };
+
+        // Set the value of a specific cookie
+        setCookie = function (name, value, options) {
+
+        };
+
+        // Remove a specific cookie
+        removeCookie = function (name) {
+
+        };
+
+        // Handle saving the name in a cookie
+        UTILS.addEvent(formSave, 'submit', function (e) {
+            e.preventDefault();
+
+            // Your code here
+            document.cookie  = "userName="+nameInput.value;
+
+            // Do not touch
+            toggleForms();
+        });
+
+        // Handle removing the cookie
+        UTILS.addEvent(formRemove, 'submit', function (e) {
+            e.preventDefault();
+
+            // Your code here
+            document.cookie = 'userName'+ '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+
+            // Do not touch
+            toggleForms();
+        });
+
+        //-------------------------------------------------
+        // Do not touch the code below
+        //-------------------------------------------------
+
+        toggleForms = function () {
+            var cookieVal = getCookie('userName');
+
+            if (cookieVal) {
+                // Show the Remove form
+                formSave.classList.add('hidden');
+                formRemove.classList.remove('hidden');
+                // Say hi
+                nameWrap.textContent = cookieVal;
+            } else {
+                // Show the Save form
+                formSave.classList.remove('hidden');
+                formRemove.classList.add('hidden');
+                // Clear last set name value
+                nameWrap.textContent = '';
+                nameInput.value = '';
+                // Focus the input
+                nameInput.focus();
+            }
+        };
+
+        /**
+         * Init
+         */
+
+            // Show the proper form
+        toggleForms();
+    }());
+
+</script>
+
+</body>
+</html>

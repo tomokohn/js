@@ -3,8 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        html {
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            background: #2F2F2F;
+            color: #eee;
+            font-family: sans-serif;
+            margin: 0;
+            z-index: 1;
+        }
+
+        .btn {
+            background: #5cb85c;
+            border-radius: 5px;
+            border: 1px solid #4cae4c;
+            box-shadow: 0px 0px 10px #000;
+            color: #eee;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 1em;
+            font-weight: bold;
+            line-height: 40px;
+            margin-bottom: 20px;
+            padding: 0 20px;
+            text-align: center;
+            text-shadow: 0px 0px 3px #333;
+        }
+
+        .btn:hover {
+            background-color: #47a447;
+            border-color: #398439;
+            box-shadow: 0px 0px 20px #111;
+            color: #eee;
+        }
+
+        .textCenter {
+            text-align: center;
+        }
+
+        .transition {
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* =================================================
+           Temp CSS
+           ================================================= */
+
+        main {
+            margin: auto;
+            padding: 120px 40px;
+            max-width: 600px;
+            min-width: 400px;
+            width: auto;
+        }
+
+        main h1 {
+            color: #5cb85c;
+            text-shadow: 0px 0px 10px #111;
+        }
+
+        input[type="text"] {
+            background: #ccc;
+            border-bottom: 1px solid #666;
+            border-left: 4px solid #666;
+            border-right: 4px solid #666;
+            border-top: 1px solid #eee;
+            color: #666;
+            font-weight: bold;
+            height: 40px;
+            list-style: none;
+            outline: 0;
+            padding: 10px;
+            padding-right: 35px;
+            position: relative;
+            text-shadow: 0px 0px 1px #eee;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
+<main>
+    <h1>Numbers Trivia</h1>
+    <form action="">
+        <input id="value" type="text" value="" placeholder="Enter a number of interest..." autofocus />
+        <br /><br />
+        <input class="btn" type="submit" value="Hit Me Baby!" />
+    </form>
+    <output></output>
+</main>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script>
+    /*
+     Ex. jQuery Ajax
 
+     Requirements:
+     1. When the button is clicked, get the value from the input field
+     2. Issue an API call (see API spec below). Don't forget to set any needed HTTP headers.
+     3. When the API returns data, insert it to the <output></output>
+
+     Restrictions:
+     - Do not touch the HTML/CSS
+     - Use jQuery only (loaded in this Pen)
+
+     API spec:
+     method: GET
+     url: https://numbersapi.p.mashape.com/{number}/trivia
+     (Header) X-Mashape-Key: Mh3SqwphBKmshWj5ZdvLUA1bIVSjp14wEMTjsngXnsVT4AvKu0
+     */
+
+    (function ($) {
+
+
+        // Your code here
+        $('form').submit(function (e){
+            e.preventDefault();
+            var data  = $('#value').val(),
+                url = "https://numbersapi.p.mashape.com/" + data + "/trivia";
+        })
+
+        $.ajax({
+            url: url,
+            type: "get",
+            headers: {"X-Mashape-Key": "Mh3SqwphBKmshWj5ZdvLUA1bIVSjp14wEMTjsngXnsVT4AvKu0"}
+
+        }).done (function () {
+            alert (1)
+        });
+
+    }(jQuery))
+</script>
 </body>
 </html>

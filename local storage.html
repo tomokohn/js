@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>local storage</title>
 </head>
 <body>
-
+<input type="range" min="0" max="100" id="range">
+<h1 id="number"></h1>
+<script>
+function listen(){
+    var     input = document.querySelector("#range"),
+            disp = document.querySelector("#number"),
+            value = localStorage.getItem("number");
+//    disp.innerHTML = localStorage.getItem("number");
+    console.log(value);
+    input.addEventListener("input", function (e) {
+        disp.innerHTML = input.value;
+        localStorage.setItem("number", input.value);
+           })
+    window.addEventListener('storage', function (e) {
+        value = localStorage.getItem("number");
+        disp.innerHTML = value;
+        input.value = value;
+    });
+}
+    listen();
+</script>
 </body>
 </html>
