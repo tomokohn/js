@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>custom event</title>
+    <style>
+        .box1{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+<div class="box1" onclick="triggerEvent('tzlil')"></div>
+<div class="box2" onclick="triggerEvent('bill')"></div>
+<script>
+    function triggerEvent (name){
+        var myevent = new CustomEvent("SayMyName",{
+            "detail":{
+                "name":name
+            }});
+        document.dispatchEvent(myevent);
+    }
+
+    document.addEventListener("SayMyName", function(e){
+        console.log(e.detail.name);
+    });
+</script>
+</body>
+</html>

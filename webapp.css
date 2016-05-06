@@ -1,0 +1,126 @@
+body{
+    font-family: arial;
+    margin: 0;
+    background-image: url(http://www.pulsarwallpapers.com/data/media/3/Alien%20Ink%202560X1600%20Abstract%20Background.jpg) ;
+    box-sizing: border-box;
+}
+
+header {
+    background: #000;
+    height: 50px;
+}
+.layout-wrap{
+    max-width:960px;
+    margin: 0 auto;
+}
+.page-body{
+    max-width: 960px;
+    background: darkgrey;
+    height: 100vh;
+}
+header a {
+    float: left;
+    margin: 10px 0  10px 30px;
+}
+
+header form {
+    float: right;
+    margin: 15px  30px  ;
+}
+.notifications {
+    max-width:960px ;
+    height: 30px;
+    background: lightgray;
+    margin: 10px;
+
+}
+.nav-section {
+    float:left;
+    margin: 0px 16px;
+    width:30%;
+    background: #000;
+}
+.nav-section>p {
+    color: white;
+    font-size: 20px;
+    width: 60%;
+    height: 120px;
+    margin: 10px auto ;
+    text-align: center;
+
+}
+.menu {
+    background: lightgray;
+    padding: 3px;
+
+    /*   position: relative; */
+}
+.menu-hint p {
+    margin: 7px 100px  7px 20px;
+    display: inline-block;
+}
+
+.arrow:after{
+    content: "\25BC";
+    display: inline-block;
+
+}
+.arrow{
+    content: "\25BC";
+    display: inline-block;
+}
+
+.action-list{
+    list-style:none;
+    padding:  0  20px;
+    position: absolute;
+    width:21%;
+
+}
+
+.action-list{
+    display: none;
+}
+
+
+.menu-hint:hover~.action-list {
+    display: block;
+}
+/* .menu-hint:hover~.arrow:{
+  content: "\25B2";
+  display: inline-block;
+} */
+.action-list li {
+    border-bottom: 1px solid gray;
+    padding: 5px;
+    background: #f5f5f5;
+}
+.action-list li:last-child{
+    border-bottom: none;
+}
+
+li a {
+    text-decoration: none;
+    color: black;
+}
+
+.tabs{
+    clear:both;
+    padding-top: 20px;
+}
+.tabs ul{
+    padding: 0;
+}
+.tabs li {
+    display: inline-block;
+    background: gray;
+    padding: 20px ;
+    margin: 0 10px;
+    width: 18%;
+    text-align: center;
+}
+#quick-reports:target {
+    display: block;
+    height: 300px;
+    margin: 0 20px;
+    background: lightgray;

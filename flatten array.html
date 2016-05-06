@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+     Ex. flatten:
+
+     Write a function to flatten an array.
+     - Any nested arrays will be represented as values only
+     - Support shallow flatten, which will flatten only one level deep
+
+     */
+    (function () {
+        var arr = [1, [2], [3, [[4]]], [5, 6]],
+        flatten;
+        var arrL = arr.length;
+        for (var i=0;i<arrL; i++){
+            if (Array.isArray(arr[i])) {
+
+
+
+            }
+        }
+        //-----------------------------------------------------
+        // Your code here
+        //-----------------------------------------------------
+        console.log(tatArr);
+
+
+        //-----------------------------------------------------
+        // Tests
+        //-----------------------------------------------------
+//        console.log(flatten(arr));
+        // [1, 2, 3, 4, 5, 6]
+//        console.log(flatten(arr, true));
+        // [1, 2,( 3, [[4]], 5, 6]
+    }());
+
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animate</title>
+    <style>
+        .out {
+            width: 900px;
+            height: 400px;
+            position: relative;
+            border: 1px dashed blue;
+            margin: 0 auto;
+        }
+        .box {
+            position: absolute;
+            height: 200px;
+            width: 300px;
+            background: purple;
+            left:0px
+        }
+    </style>
+</head>
+<body>
+<button>move</button>
+<div class="out">
+    <div class="box">#</div>
+</div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script>
+    (function ($) {
+        $('button').hover(function () {
+            $('.box').stop().animate({left: '+250',top: '250'});
+        },function () {
+            $('.box').stop().animate({left: '+0',top: '0'});
+        })
+
+      /*  $('button').click(function () {
+            $('.box').animate({left: '+250'});
+        });*/
+    }(jQuery))
+</script>
+</body>
+</html>
