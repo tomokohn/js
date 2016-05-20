@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dropping balls</title>
+    <style>
+        .area {
+            width: 85%;
+            display: inline-block;
+            background: lightblue;
+            height: 100vh;
+            position: relative;
+        }
+        .yellow {
+            width: 10%;
+            display: inline-block;
+            background: yellow;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+<div class="area"></div>.
+<div class="yellow"></div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script>
+    jQuery( function () {
+        var ball = function () {
+            var diameter = Math.floor(Math.random() * (90 - 20 + 1)) + 20,
+                posx = Math.floor(Math.random() * (90 - 20 + 1)) + 20,
+                color = 'red',
+                b = $('<div class="ball"></div>').css({
+                        position: 'absolute',
+                        left: posX,
+                        background : color,
+                        width : diameter,
+                        height : diameter,
+                        borderRadius : '50%'
+                });
+            b = b.animate({top:'100vh'},600);
+            return b;
+        }
+        $('.area').append(ball(50));
+        
+        /*var ball = function(radius,color){
+            $("<div/>",{
+                "class" : "ball",
+                "css" : {
+                    "background" : color,
+                    "width" : radius*2,
+                    "height" : radius*2,
+                    "border-radius" : 50%
+                },
+                "click" : function(){
+                    alert("you just clicked me!!");
+                },
+            })
+         }
+        $('area').append(ball(50,red));*/
+    });
+
+</script>
+</body>
+</html>
